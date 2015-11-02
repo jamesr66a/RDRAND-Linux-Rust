@@ -7,7 +7,7 @@ RCFLAGS := -O -C code-model=kernel -C relocation-model=static
 
 
 KER = $(shell uname -r)
-OBJ = rdrand-rust-c
+OBJ = rdrand
 RMODS = macros.rs raw.rs
 
 obj-m = ${OBJ}.o
