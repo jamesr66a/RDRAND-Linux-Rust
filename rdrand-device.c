@@ -13,7 +13,7 @@ static ssize_t device_read(struct file *file, char __user *user_buf, size_t len,
   char *buf = kzalloc(len, __GFP_WAIT);
 
   for (i = 0; i < len / sizeof(int); i++) {
-    __asm__ __volatile__("rdrand %0\n" : "=r"((*(int*)&buf[i])));
+    __asm__ __volatile__("rdrand %0\n" : "=r"((*(int*)&buf[i*sizeof(int)])));
   }
 
   if (len % sizeof(int)) {
