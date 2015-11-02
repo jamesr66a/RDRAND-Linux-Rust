@@ -23,7 +23,7 @@ static ssize_t device_read(struct file *file, char __user *user_buf, size_t len,
     } remainder;
     __asm__ __volatile__("rdrand %0\n" : "=r"(remainder.i));
     for (i = 0; i < len % sizeof(int); i++) {
-      buf[len / 4 + i] = remainder.c[i];
+      buf[len - (len%4) + i] = remainder.c[i];
     }
   }
 
