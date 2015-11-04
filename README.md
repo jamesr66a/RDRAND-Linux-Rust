@@ -13,3 +13,7 @@ What
 rdrand-device.c is the reference C implementation
 
 rdrand-rust{-c.c,.rs} is the Rust port
+
+Refs
+====
+[rust.ko](https://github.com/jamesr66a/rust.ko)
